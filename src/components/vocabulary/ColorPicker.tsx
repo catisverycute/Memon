@@ -1,9 +1,9 @@
 import { type JSX } from 'react';
-import { useColorStore } from '../../stores/colorStore';
+import { useVocabularyFormStore } from '../../stores/vocabularyStore';
 
 export default function ColorPicker(): JSX.Element {
-  const selectedColor = useColorStore((state) => state.selectedColor);
-  const setSelectedColor = useColorStore((state) => state.setSelectedColor);
+  const color = useVocabularyFormStore((state) => state.color);
+  const setColor = useVocabularyFormStore((state) => state.setColor);
   const COLORS = [
     'bg-pastelRose',
     'bg-pastelLemon',
@@ -22,8 +22,8 @@ export default function ColorPicker(): JSX.Element {
         <button
           key={i}
           className={`w-10 h-10 rounded-full ${colorClass} border focus:border-red-800 border-gray-400`}
-          onClick={() => setSelectedColor(colorClass)}
-          value={selectedColor}
+          onClick={() => setColor(colorClass)}
+          value={color}
         />
       ))}
     </div>
