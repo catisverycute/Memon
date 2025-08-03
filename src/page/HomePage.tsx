@@ -3,18 +3,34 @@ import VocabularyCard from '../components/vocabulary/VocabularyCard';
 import Header from '../components/common/Header';
 import AddVocabularyButton from '../components/vocabulary/AddVocabularyButton';
 import CreateVocabularyModal from '../components/vocabulary/CreateVocabularyModal';
-
-const wordList = ['TOEIC 단어장', 'JLPT N3 단어장'];
+import { mockVocabulary } from '../data/mockVocabulary';
+import { Link } from 'react-router-dom';
 
 export default function HomePage(): JSX.Element {
   const [openModal, setOpenModal] = useState(false);
+
+  const handleCloseModal = () => setOpenModal(false);
+
   return (
     <div>
       <Header />
-      {wordList.map((word) => (
-        <VocabularyCard key={word} title={word} />
+      {mockVocabulary.map((voca) => (
+        <Link to={`/learn/${voca.id}`}>
+          <VocabularyCard key={voca.id} title={voca.title} color={voca.color} />
+        </Link>
       ))}
-      {openModal && <CreateVocabularyModal />}
+
+      {openModal && (
+        <div
+          className="fixed inset-0 z-10 flex items-center justify-center bg-gray-800/30"
+          onClick={handleCloseModal}
+        >
+          <div onClick={(e) => e.stopPropagation()}>
+            <CreateVocabularyModal />
+          </div>
+        </div>
+      )}
+
       <AddVocabularyButton addButton={() => setOpenModal(true)} />
     </div>
   );
