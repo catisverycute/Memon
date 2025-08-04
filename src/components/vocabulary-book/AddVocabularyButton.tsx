@@ -4,7 +4,7 @@ interface AddButtonProps {
   addButton: () => void;
 }
 
-export default function AddVocabularyButton({
+export default function AddVocabularyBookButton({
   addButton,
 }: AddButtonProps): JSX.Element {
   return (
