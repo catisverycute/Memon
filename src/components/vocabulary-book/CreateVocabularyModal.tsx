@@ -1,7 +1,7 @@
 import { type JSX } from 'react';
 import ColorPicker from './ColorPicker';
 
-export default function CreateVocabularyModal(): JSX.Element {
+export default function CreateVocabularyBookModal(): JSX.Element {
   return (
     <div className="relative p-5 bg-white border rounded-t-lg">
       <button className="absolute right-0 mr-5">체크</button>

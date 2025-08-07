@@ -1,15 +1,15 @@
 import { useState, type JSX } from 'react';
 import DeleteConfirmModal from './DeleteCofirmModal';
 
-interface VocabularyCardProps {
+interface VocabularyBookProps {
   title: string;
   color: string;
 }
 
-export default function VocabularyCard({
+export default function VocabularyBook({
   title,
   color,
-}: VocabularyCardProps): JSX.Element {
+}: VocabularyBookProps): JSX.Element {
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [showPinButton, setShowPinButton] = useState(false);
   const [showDeleteButton, setShowDeleteButton] = useState(false);

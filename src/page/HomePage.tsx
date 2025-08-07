@@ -1,10 +1,10 @@
 import { useState, type JSX } from 'react';
-import VocabularyCard from '../components/vocabulary/VocabularyCard';
-import Header from '../components/common/Header';
-import AddVocabularyButton from '../components/vocabulary/AddVocabularyButton';
-import CreateVocabularyModal from '../components/vocabulary/CreateVocabularyModal';
-import { mockVocabulary } from '../data/mockVocabulary';
 import { Link } from 'react-router-dom';
+import { mockVocabulary } from '../data/mockVocabulary';
+import Header from '../components/common/Header';
+import AddVocabularyButton from '../components/vocabulary-book/AddVocabularyButton';
+import CreateVocabularyModal from '../components/vocabulary-book/CreateVocabularyModal';
+import VocabularyBook from '../components/vocabulary-book/VocabularyBook';
 
 export default function HomePage(): JSX.Element {
   const [openModal, setOpenModal] = useState(false);
@@ -15,8 +15,8 @@ export default function HomePage(): JSX.Element {
     <div>
       <Header />
       {mockVocabulary.map((voca) => (
-        <Link to={`/learn/${voca.id}`}>
-          <VocabularyCard key={voca.id} title={voca.title} color={voca.color} />
+        <Link to={`/vocabulary/${voca.id}/list`}>
+          <VocabularyBook key={voca.id} title={voca.title} color={voca.color} />
         </Link>
       ))}
 
