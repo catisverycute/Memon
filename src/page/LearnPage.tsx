@@ -1,8 +1,9 @@
 import { useState, type JSX } from 'react';
 import Card from '../components/card/Card';
 import { toeicWords } from '../data/mockWords';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+// import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Header from '../components/common/Header';
+import { IoChevronBack, IoChevronForward } from 'react-icons/io5';
 
 export default function LearnPage(): JSX.Element {
   const [currentWord, setCurrentWord] = useState(0);
@@ -52,11 +53,11 @@ export default function LearnPage(): JSX.Element {
         </div>
         <div className="flex justify-center items-center">
           <button onClick={goPrev}>
-            <ChevronLeft />
+            <IoChevronBack />
           </button>
           <Card word={toeicWords[currentWord]} />
           <button onClick={goNext}>
-            <ChevronRight />
+            <IoChevronForward />
           </button>
         </div>
         <div>
