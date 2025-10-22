@@ -1,6 +1,9 @@
 @import 'tailwindcss';
 
 @theme {
+  --color-btnCancel: #f7adaf;
+  --color-btnConfirm: #4ad29b;
+
   --color-midnight: #121063;
   --color-tahiti: #3ab7bf;
   --color-bermuda: #78dcca;
@@ -14,7 +17,7 @@
   --color-lavender: #eadcf8;
   --color-softcoral: #ffd5cd;
   --color-skygray: #e6ebf5;
-  
+
   /* 단어장 선택 색상  */
   --color-pastelRose: #f28b82;
   --color-pastelLemon: #fdd663;
