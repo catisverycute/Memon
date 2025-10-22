@@ -1,5 +1,7 @@
 import { useState, type JSX } from 'react';
 import DeleteConfirmModal from './DeleteCofirmModal';
+import { TiPin } from 'react-icons/ti';
+import Button from '../common/Button';
 
 interface VocabularyBookProps {
   title: string;
@@ -47,36 +49,45 @@ export default function VocabularyBook({
   };
 
   return (
-    <div className="flex flex-col justify-center my-8">
-      <div
-        className={`flex justify-between ${color} w-72 rounded-lg`}
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}
-      >
-        <button
-          className={`bg-blue-300 w-20 rounded-l-lg ${showPinButton ? 'block' : 'hidden'}`}
+    <div className="border">
+      <div className="flex flex-col justify-center my-8">
+        <div
+          className={`flex justify-between ${color} w-full rounded-lg`}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
         >
-          pin
-        </button>
+          <Button
+            className={`bg-blue-300 w-20 h-20 p-2 border ${showPinButton ? 'block' : 'hidden'}`}
+          >
+            <TiPin size={32} />
+          </Button>
+          <div className="p-6 w-full">{title}</div>
 
-        <div className="p-6 w-full">{title}</div>
+          {/* <button
+                className={`bg-red-400 w-20 rounded-r-lg ${
+                  showDeleteButton ? 'opacity-100' : 'opacity-0'
+                }`}
+                onClick={handleDeleteClick}
+              >
+                삭제
+              </button> */}
+          <Button
+            className={`bg-red-400 w-20 h-20 rounded-r-lg ${
+              showDeleteButton ? 'opacity-100' : 'opacity-0'
+            }`}
+            onClick={handleDeleteClick}
+          >
+            삭제
+          </Button>
 
-        <button
-          className={`bg-red-400 w-20 rounded-r-lg ${
-            showDeleteButton ? 'opacity-100' : 'opacity-0'
-          }`}
-          onClick={handleDeleteClick}
-        >
-          삭제
-        </button>
-
-        {showDeleteModal && (
-          <DeleteConfirmModal
-            onCancel={() => setShowDeleteModal(false)}
-            vocabularyName={title}
-          />
-        )}
+          {showDeleteModal && (
+            <DeleteConfirmModal
+              onCancel={() => setShowDeleteModal(false)}
+              vocabularyName={title}
+            />
+          )}
+        </div>
       </div>
     </div>
   );
