@@ -1,6 +1,5 @@
-// import { PlusCircle } from 'lucide-react';
-
 import { LuCirclePlus } from 'react-icons/lu';
+import Button from '../common/Button';
 
 interface AddButtonProps {
   addWord: () => void;
@@ -9,12 +8,12 @@ interface AddButtonProps {
 export default function AddWordButton({ addWord }: AddButtonProps) {
   return (
     <div className="flex justify-center">
-      <button
-        className="px-10 py-3 rounded flex font-semibold gap-2 bg-primary"
-        onClick={addWord}
-      >
-        단어 추가 <LuCirclePlus />
-      </button>
+      <Button size="md" onClick={addWord}>
+        <div className="flex leading-none gap-4 justify-center">
+          <LuCirclePlus />
+          <span>단어 추가</span>
+        </div>
+      </Button>
     </div>
   );
 }
