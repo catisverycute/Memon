@@ -7,7 +7,7 @@ interface CardProps {
 
 export default function Card({ word }: CardProps): JSX.Element {
   return (
-    <div className="flex justify-center items-center shadow-xl border border-amber-200 rounded-lg w-64 h-48 mx-4 bg-amber-50">
+    <div className="flex justify-center items-center shadow-xl border border-pastelLemon rounded-lg w-64 h-48 mx-4 bg-pastelLemonLight">
       <div className="text-2xl font-semibold ">{word.word}</div>
     </div>
   );
