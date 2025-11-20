@@ -8,8 +8,9 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     | 'text'
     // | 'text2'
     | 'confirm'
-    | 'cancel';
-  size?: 'sm' | 'md' | 'lg';
+    | 'cancel'
+    | 'icon';
+  size?: 'xs' | 'sm' | 'md' | 'lg' | 'addBtn';
 }
 
 export default function Button({
@@ -44,22 +45,24 @@ export default function Button({
       cursor-not-allowed
     `,
     text: `
-			text-primary
+			text-black
 			text-h4
-			bg-transparent
 		`,
     text2: `
 			text-[#777777]
 			text-h4
 		`,
+    icon: ``,
     confirm: `bg-btnConfirm text-black w-20 h-10 rounded-md`,
     cancel: `bg-btnCancel text-black w-20 h-10 rounded-md`,
   };
 
   const sizeSet = {
+    xs: `w-12 h-12`,
     sm: `w-20 h-10 rounded-lg`,
     md: `w-28 h-14 rounded-xl`,
-    lg: ``,
+    lg: `h-20`,
+    addBtn: `w-14 h-14`,
   };
 
   return (
