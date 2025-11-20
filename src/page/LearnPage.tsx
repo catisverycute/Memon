@@ -4,6 +4,7 @@ import { toeicWords } from '../data/mockWords';
 // import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Header from '../components/common/Header';
 import { IoChevronBack, IoChevronForward } from 'react-icons/io5';
+import Button from '../components/common/Button';
 
 export default function LearnPage(): JSX.Element {
   const [currentWord, setCurrentWord] = useState(0);
@@ -60,9 +61,13 @@ export default function LearnPage(): JSX.Element {
             <IoChevronForward />
           </button>
         </div>
-        <div>
-          <button className="bg-dol">학습 필요</button>
-          <button>학습 완료</button>
+        <div className="flex justify-center mt-14 gap-6">
+          <Button variant="text" size="md" className="bg-softcoral">
+            학습 필요
+          </Button>
+          <Button variant="text" size="md" className="bg-pastelSkyLight">
+            학습 완료
+          </Button>
         </div>
       </div>
     </div>
