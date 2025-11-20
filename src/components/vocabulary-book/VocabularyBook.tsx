@@ -49,30 +49,26 @@ export default function VocabularyBook({
   };
 
   return (
-    <div className="border">
-      <div className="flex flex-col justify-center my-8">
+    <div>
+      <div className="flex flex-col justify-center border h-24 my-8">
         <div
-          className={`flex justify-between ${color} w-full rounded-lg`}
+          className={`flex justify-between ${color} h-20 rounded-lg`}
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
         >
           <Button
-            className={`bg-blue-300 w-20 h-20 p-2 border ${showPinButton ? 'block' : 'hidden'}`}
+            variant="icon"
+            size="lg"
+            className={`bg-blue-300 p-2 rounded-l-lg ${showPinButton ? 'block' : 'hidden'}`}
           >
-            <TiPin size={32} />
+            <TiPin size={28} />
           </Button>
           <div className="p-6 w-full">{title}</div>
 
-          {/* <button
-                className={`bg-red-400 w-20 rounded-r-lg ${
-                  showDeleteButton ? 'opacity-100' : 'opacity-0'
-                }`}
-                onClick={handleDeleteClick}
-              >
-                삭제
-              </button> */}
           <Button
+            variant="icon"
+            size="lg"
             className={`bg-red-400 w-20 h-20 rounded-r-lg ${
               showDeleteButton ? 'opacity-100' : 'opacity-0'
             }`}
