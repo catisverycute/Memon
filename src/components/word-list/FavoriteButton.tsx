@@ -1,9 +1,10 @@
-import { StarIcon } from 'lucide-react';
+// import { StarIcon } from 'lucide-react';
 import type { JSX } from 'react';
+import { FaRegStar, FaStar } from 'react-icons/fa';
 
 interface FavoriteButtonProps {
-  isChecked: boolean;
-  handleStarBtn: () => void;
+  isChecked?: boolean;
+  handleStarBtn?: () => void;
 }
 
 export default function FavoriteButton({
@@ -12,7 +13,7 @@ export default function FavoriteButton({
 }: FavoriteButtonProps): JSX.Element {
   return (
     <button onClick={handleStarBtn}>
-      {isChecked ? <StarIcon fill="yellow" /> : <StarIcon />}
+      {isChecked ? <FaStar fill="yellow" /> : <FaRegStar />}
     </button>
   );
 }

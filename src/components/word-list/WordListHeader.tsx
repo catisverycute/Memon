@@ -1,5 +1,7 @@
 import type { JSX } from 'react';
-import { ChevronLeft, SearchIcon } from 'lucide-react';
+import { BsSearch } from 'react-icons/bs';
+import { IoChevronBack } from 'react-icons/io5';
+// import { ChevronLeft, SearchIcon } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 interface WordListHeaderProps {
@@ -14,11 +16,11 @@ export default function WordListHeader({
   return (
     <div className="relative flex items-center h-14 px-4">
       <button className="absolute left-4" onClick={() => navigate(-1)}>
-        <ChevronLeft />
+        <IoChevronBack />
       </button>
       <h1 className="mx-auto text-lg font-semibold">{listName}</h1>
       <button className="absolute right-4" onClick={() => navigate(-1)}>
-        <SearchIcon />
+        <BsSearch />
       </button>
     </div>
   );
